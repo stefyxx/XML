@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ex1 -->
+<books>
+    <book>
+        <title>Alien</title>
+        <auteur>
+            <name></name>
+            <firstName></firstName>
+        </auteur>
+        <genre></genre>
+        <datePublication format="hh/mm/yy"></datePublication>
+    </book>
+    <book previous="Alien">
+        <title>Alien 2</title>
+        <auteur>
+            <name></name>
+            <firstName></firstName>
+        </auteur>
+        <genre></genre>
+        <datePublication format="hh/mm/yy"></datePublication>
+    </book>
+</books>
+
+<!-- ex2 NON POSSO AVERE 2 O PIù ROOT (radice)// quindi devo commentare l'books' x vedere 'annuaire' -->
+
+<annuaire>
+    <personne>
+        <sexe attriute="Homme|Femme"></sexe>
+        <name></name>
+        <firstname></firstname>
+        <adress></adress>
+        <telephone>
+            <numberTel></numberTel>
+            <numberTel2></numberTel2>
+            <numberTel3></numberTel3>
+        </telephone>
+        <conctacts>
+            <mailPersonelle></mailPersonelle>
+            <mailProfessionelle></mailProfessionelle>
+            <mailAutre></mailAutre>
+        </conctacts>
+    </personne>
+
+    <personne sex="M">
+        <!-- <sexe attriute="Homme|Femme"></sexe>  quì non ha senso, mi da errore. devo creare un attributo-->
+
+        <name></name>
+        <firstname></firstname>
+        <adress>
+            <street></street>
+            <number></number>
+            <zip></zip>
+            <city></city>
+            <state></state>
+            <country></country>
+        </adress>
+        <telephone><!-- meglio tipo-->
+            <number type="home"></number>
+            <number type="work"></number>
+            <number type="other"></number>
+        </telephone>
+        <conctacts>
+            <mail type="Personelle"></mail>
+            <mail type="Professionelle"></mail>
+            <mail type="other"></mail>
+        </conctacts>
+    </personne>
+</annuaire>

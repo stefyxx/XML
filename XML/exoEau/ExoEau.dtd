@@ -1,0 +1,15 @@
+<!ELEMENT cave (bouteille+)>
+<!ELEMENT bouteille (marque,composition,source,code_barre,contenance,ph)>
+<!ELEMENT marque (#PCDATA)>
+<!ELEMENT composition (ion+,autre*)>
+<!ELEMENT ion (#PCDATA)>
+<!ATTLIST ion type (negatif|positif) #REQUIRED>
+<!ELEMENT autre (#PCDATA)>
+<!ATTLIST autre type CDATA #REQUIRED>
+<!ELEMENT source (ville,departement)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT departement (#PCDATA)>
+<!ELEMENT code_barre (#PCDATA)>
+<!ELEMENT contenance (#PCDATA)>
+<!ATTLIST contenance unit (cl|dl|l) #REQUIRED>
+<!ELEMENT ph (#PCDATA)>

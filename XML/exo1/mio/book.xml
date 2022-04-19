@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+
+<!DOCTYPE books SYSTEM "./book.dtd">
+<books>
+    <book>
+        <title>Alien</title>
+        <auteur>
+            <name></name>
+            <firstName></firstName>
+        </auteur>
+        <genre></genre>
+        <datePublication format="jj/mm/yy"></datePublication>
+    </book>
+    <book previous="Alien">
+        <title>Alien 2</title>
+        <auteur>
+            <name></name>
+            <firstName></firstName>
+        </auteur>
+        <genre></genre>
+        <datePublication format="hh/mm/yy"></datePublication>
+    </book>
+</books>

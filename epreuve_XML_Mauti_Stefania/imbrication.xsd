@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:include schemaLocation="./adresse.xsd"/>
+<xsd:element name="Classe">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="Enleves">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Enleve" maxOccurs="12" minOccurs="6">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="nom" type="Nom"/>
+                                    <xsd:element name="prenom" type="Prenom"/>
+                                    <xsd:element name="dateNaissance" type="xsd:date"/>
+                                    <xsd:element name="Email" type="Email"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Professeur" maxOccurs="1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="nom" type="Nom"/>
+                        <xsd:element name="prenom" type="Prenom"/>
+                        <xsd:element name="titre">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:string">
+                                    <xsd:enumeration value="Mr"/>
+                                    <xsd:enumeration value="Mme"/>
+                                    <xsd:enumeration value="Melle"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element name="anne" type="xsd:gYear"/>
+                        <xsd:element name="adresse" type="Adresse"/>
+                        <xsd:element name="n_telephone" type="xsd:string"/>
+                        <xsd:element name="Email" type="Email"></xsd:element>
+                        <xsd:element name="CoursDonne" maxOccurs="unbounded">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="titre">
+                                        <xsd:simpleType>
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:minLength value="2"/>
+                                                <xsd:maxLength value="255"/>
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="nCredits">
+                                        <xsd:simpleType>
+                                            <xsd:restriction base="xsd:positiveInteger">
+                                                <xsd:pattern value="[1-9]"/>
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:element>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+<xsd:simpleType name="Nom">
+    <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="50"/>
+        <xsd:minLength value="2"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Prenom">
+    <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="50"/>
+        <xsd:minLength value="2"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Email">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[_\-a-zA-Z0-9\.\+]+@[a-zA-Z0-9](\.?[\-a-zA-Z0-9]*[a-zA-Z0-9])*"></xsd:pattern>
+    </xsd:restriction>
+</xsd:simpleType>
+
+</xsd:schema>

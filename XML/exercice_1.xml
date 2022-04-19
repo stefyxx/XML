@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- <!DOCTYPE books SYSTEM "exo1.dtd"> -->
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="Exo1.xsd">
+    <book key="LotrFellowship">
+        <title>Mon Titre</title>
+        <author>
+            <name>Tolkien</name>
+            <firstname>J R R</firstname>
+        </author>
+        <gender>Fantasy</gender>
+        <pubDate>
+            <Day>1</Day>
+            <Month>5</Month>
+            <Year>1945</Year>
+        </pubDate>
+    </book>
+    <book key="LotrTwoTower" prev="LotrFellowship">
+        <title>Mon Titre 2</title>
+        <author>
+            <name>Tolkien</name>
+            <firstname>J R R</firstname>
+        </author>
+        <gender>Fantasy</gender>
+        <pubDate>
+            <Day>5</Day>
+            <Month>5</Month>
+            <Year>1945</Year>
+        </pubDate>
+    </book>
+</books>

@@ -1,0 +1,25 @@
+<!ELEMENT annuaire (personne+)>
+<!ELEMENT personne (sexe?,name,firstname,adress,telephone,conctacts)>
+<!ATTLIST personne sex NMTOKEN #IMPLIED>
+<!ELEMENT sexe EMPTY>
+<!ATTLIST sexe attriute CDATA #REQUIRED>
+<!ELEMENT name EMPTY>
+<!ELEMENT firstname EMPTY>
+<!ELEMENT adress (street?,number?,zip?,city?,state?,country?)>
+<!ELEMENT telephone (numberTel?,numberTel2?,numberTel3?,number*)>
+<!ELEMENT numberTel EMPTY>
+<!ELEMENT numberTel2 EMPTY>
+<!ELEMENT numberTel3 EMPTY>
+<!ELEMENT conctacts (mailPersonelle?,mailProfessionelle?,mailAutre?,mail*)>
+<!ELEMENT mailPersonelle EMPTY>
+<!ELEMENT mailProfessionelle EMPTY>
+<!ELEMENT mailAutre EMPTY>
+<!ELEMENT street EMPTY>
+<!ELEMENT number EMPTY>
+<!ATTLIST number type NMTOKEN #IMPLIED>
+<!ELEMENT zip EMPTY>
+<!ELEMENT city EMPTY>
+<!ELEMENT state EMPTY>
+<!ELEMENT country EMPTY>
+<!ELEMENT mail EMPTY>
+<!ATTLIST mail type NMTOKEN #REQUIRED>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE bibliographie SYSTEM "./ex3.dtd">
+<bibliographie>
+    <books>
+        <book id="aaa">
+            <title>Bla bla</title>
+            <authores>
+                <author>Bla bla</author>
+                <author></author>
+                <author></author>
+            </authores>
+            <tomes n_tomes="3">
+                <tome nISBN="a000111" id="aaa">
+                    <nr_page>100</n_page>
+                </tome>
+                <tome nISBN="a000112" id="aaa">
+                    <nr_page>200</n_page>
+                </tome>
+                <tome nISBN="a000113" id="aaa">
+                    <nr_page>150</n_page>
+                </tome>
+            </tomes>
+            <info>
+                <name_editor>Bla bla</name_editor>
+                <year_edition>Bla bla</year_edition>
+                <place_publication>Bla bla</place_publication>
+            </info>
+        </book>
+        <book id="02">
+            <title>Ohi ohi</title>
+            <authores>
+                <author>Ohi ohi</author>
+                <author>Ohi ohi</author>
+                <author>Ohi ohi</author>
+            </authores>
+            <tomes n_tomes="3">
+                <tome nISBN="000122" id="02">
+                    <nr_page>150</n_page>
+                </tome>
+                <tome nISBN="000123" id="02">
+                    <nr_page>150</n_page>
+                </tome>
+                <tome nISBN="000124" id="02">
+                    <nr_page>150</n_page>
+                </tome>
+            </tomes>
+            <info>
+                <name_editor>Ohi ohi</name_editor>
+                <year_edition>Ohi ohi</year_edition>
+                <place_publication>Ohi ohi</place_publication>
+            </info>
+        </book>
+    </books>
+
+    <articles>
+        <article>
+            <title>hallo</title>
+            <authores>
+                <author>Ohi ohi</author>
+                <author>Ohi ohi</author>
+                <author>Ohi ohi</author>
+            </authores>
+            <references>
+                <newspaper_name>hallo</newspaper_name>
+                <n_page>22</n_page>
+                <n_newspaper>3</n_newspaper>
+                <year_publication>2010</year_publication>
+            </references>
+        </article>
+        <article>
+            <title>ciao</title>
+            <authores>
+                <author>Ohi ohi</author>
+                <author>Ohi ohi</author>
+                <author>Ohi ohi</author>
+            </authores>
+            <references>
+                <newspaper_name>ciao</newspaper_name>
+                <n_page>50</n_page>
+                <n_newspaper>5</n_newspaper>
+                <year_publication>1999</year_publication>
+            </references>
+        </article>   
+    </articles>
+    <avisPersonnel></avis>
+</bibliographie>

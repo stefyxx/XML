@@ -1,0 +1,13 @@
+<!ELEMENT books (book+)>
+<!ELEMENT book (title, author, gender, pubDate)>
+<!ATTLIST book key ID #REQUIRED>
+<!ATTLIST book prev IDREF #IMPLIED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (name, firstname)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+<!ELEMENT pubDate (Day, Month, Year)>
+<!ELEMENT Day (#PCDATA)>
+<!ELEMENT Month (#PCDATA)>
+<!ELEMENT Year (#PCDATA)>

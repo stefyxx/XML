@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="phonebook">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element ref="person" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+<!-- Elemento per creare le 2 possibilià di scrittura nell'attributo -->
+<xsd:simpleType name="gender">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="H"/>
+        <xsd:enumeration value="F"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+
+<xsd:element name="person">
+    <xsd:complexType>
+        <xsd:sequence>
+
+            <!-- attributo: sex in tag 'person'  -->
+            <xsd:element name="sex">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="xsd:string">
+                            <xsd:attribute name="sex" type="gender" use="required"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+
+                <!-- restrixione dell'attributo, x far rientrare solo H/F  NON CORRETTO
+                <xsd:attribute name="sex" use="required"> 
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="H"/>
+                            <xsd:enumeration value="F"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>  -->
+            
+            <xsd:element name="firstname" type="xsd:string"></xsd:element>
+            <xsd:element name="lastname" type="xsd:string"></xsd:element>
+
+            <xsd:element ref="address"></xsd:element>
+            <xsd:element ref="phones" maxOccurs="unbounded"/>
+            <xsd:element ref="emails"/>  <!-- use="requred"-->
+
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+<!-- blocco per l'address -->
+<xsd:element name="address">
+    <xsd:complexType>
+        <xsd:sequence>
+
+            <xsd:element name="number" type="xsd:positiveInteger"></xsd:element>
+            <xsd:element name="street" type="xsd:string"></xsd:element>
+            <xsd:element name="zip">
+                <!-- dico che il cap può avere max 5 numeri -->
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:positiveInteger">
+                        <xsd:totalDigits value="5"></xsd:totalDigits>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            
+            <xsd:element name="city" type="xsd:string"></xsd:element>
+            <xsd:element name="state">
+                <!-- dico che deve avere solo 2 lettere maiuscole -->
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[A-Z][A-Z]"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+                
+            </xsd:element>
+            <xsd:element name="country" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+<!-- blocco x dire home or work -->
+<xsd:simpleType name="possibility">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="home"/>
+        <xsd:enumeration value="work"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<!-- blocco di phones -->
+<xsd:element name="phones">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="phone" type="xsd:positiveInteger" maxOccurs="unbounded" minOccurs="1">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="xsd:positiveInteger">
+                            <xsd:attribute name="type" type="possibility" use="required"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+<!-- blocco x dire PERSONAL or WORK -->
+<xsd:simpleType name="modality">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="personal"/>
+        <xsd:enumeration value="work"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<!-- Element per dire che caratteri posso scrivere in una mail -->
+<xsd:simpleType name="caract">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[^@]+[^\.]+\..+"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+
+<!-- blocco per le mails -->
+<xsd:element name="emails">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="email" type="caract" maxOccurs="unbounded">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="xsd:string">
+                            <xsd:attribute name="type" type="modality"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+        
+    </xsd:complexType>
+</xsd:element>
+
+
+</xsd:schema>
+
+<!-- quello che qvevo scritto in 'emails':
+    <xsd:sequence>
+            <xsd:element name="email">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" maxOccurs="unbounded" use="required">
+                        
+        per fare 2 valori x un attributo, bisogna creare un altro Element, non così: 
+                        <xsd:enumeration value="personal"/>
+                        <xsd:enumeration value="work"/>
+
+                        <xsd:pattern value="[^@]+@[^\.]+\..+"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+ -->

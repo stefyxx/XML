@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="cave">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="bouteille" maxOccurs="unbounded" minOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:simpleType name="IonType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="positif" />
+            <xsd:enumeration value="negatif" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="composition">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ion" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:string">
+                                <xsd:attribute name="type" type="IonType" />
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="autre" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:string">
+                                <xsd:attribute name="type" type="xsd:string" />
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:element name="source">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ville" type="xsd:string" />
+                <xsd:element name="departement" type="xsd:string" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="bouteille">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="marque" type="xsd:string"/>
+                <xsd:element ref="composition"/>
+                <xsd:element ref="source"/>
+                <xsd:element name="code_barre" type="xsd:string"/>
+                <xsd:element name="contenance">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:string">
+                                <xsd:attribute name="unit" type="xsd:string" />
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="ph" type="xsd:float"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

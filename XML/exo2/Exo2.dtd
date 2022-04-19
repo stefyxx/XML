@@ -1,0 +1,19 @@
+<!ELEMENT phonebook (person+)>
+<!ELEMENT person (firstname, lastname, address, phones, emails)>
+<!ATTLIST person sex (H|F) #REQUIRED>
+
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT address (number, street, zip, city, state, country)>
+<!ELEMENT number (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT phones (phone+)>
+<!ELEMENT phone (#PCDATA)>
+<!ATTLIST phone type (home|work|personal) #REQUIRED>
+<!ELEMENT emails (email+)>
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST email type (home|work|personal) #REQUIRED>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="phonebook">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="person" maxOccurs="unbounded" minOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="address">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="number" type="xsd:positiveInteger" />
+                <xsd:element name="street" type="xsd:string" />
+                <xsd:element name="zip">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                            <xsd:totalDigits value="5" />
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="city" type="xsd:string" />
+                <xsd:element name="state">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="[A-Z][A-Z]"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="country" type="xsd:string" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--Balise emailAddress-->
+    <xsd:simpleType name="emailAddress">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[^@]+@[^\.]+\..+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="EmailAndPhone">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="home"/>
+            <xsd:enumeration value="work"/>
+            <xsd:enumeration value="personal"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Gender">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="H"/>
+            <xsd:enumeration value="F"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="phones">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="phone" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:int">
+                                <xsd:attribute name="type" type="EmailAndPhone" use="required" />
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="emails">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="email" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="emailAddress">
+                                <xsd:attribute name="type" type="EmailAndPhone" use="required" />
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="person">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="firstname" type="xsd:string"/>
+                <xsd:element name="lastname" type="xsd:string"/>
+                <xsd:element ref="address"/>
+                <xsd:element ref="phones"/>
+                <xsd:element ref="emails"/>
+            </xsd:sequence>
+            <xsd:attribute name="sex" type="Gender" use="required" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

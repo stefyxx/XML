@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./dates.xsd">
+    <date>
+        <time format="12-hour">6:00PM</time>
+        <day>17</day>
+        <month>6</month>
+        <year>2014</year>
+    </date>
+
+    <date>
+        <time format="24-hour">17:00</time>
+        <day>1</day>
+        <month>1</month>
+        <year>1970</year>
+    </date>
+</dates>

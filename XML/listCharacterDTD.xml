@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE listCharacter SYSTEM "listCharacterDTD.dtd">
+
+<listCharacter>
+	<Character key="character01" brother="character02" >
+		<Name>Majere</Name>
+		<FirstName>Raistlin</FirstName>
+		<Class>Wizard</Class>
+		<Level>48</Level>
+	</Character>
+	
+	<Character key="character02" brother="character01" >
+		<FirstName>Caramon</FirstName>
+		<Class>Warrior</Class>
+		<Level>43</Level>
+	</Character>
+</listCharacter>

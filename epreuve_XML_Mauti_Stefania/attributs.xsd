@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="Couleur">
+    <xsd:complexType>
+        <xsd:attribute name="rouge" type="Rouge" use="required"/>
+        <xsd:attribute name="vert" type="Vert" use="required"/>
+        <xsd:attribute name="bleu" type="Bleu" use="required"/>
+        <xsd:attribute name="opacite" type="Opacite" use="optional"/>
+
+    </xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:simpleType name="Rouge">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="0"/>
+        <xsd:maxInclusive value="255"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Vert">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="0"/>
+        <xsd:maxInclusive value="255"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Bleu">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="0"/>
+        <xsd:maxInclusive value="255"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Opacite">
+    <xsd:restriction base="xsd:float">
+        <xsd:minInclusive value="0"/>
+        <xsd:maxInclusive value="1"/>
+        <!--<xsd:fractionDigits value="2"/>-->
+    </xsd:restriction>
+</xsd:simpleType>
+
+</xsd:schema>

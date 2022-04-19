@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="cave">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="marque" type="xsd:string"/>
+
+            <xsd:element ref="composition">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="xsd:string">
+                            <xsd:attribute name="conposition" type="" use="required"></xsd:attribute>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element ref="source"/>
+            <xsd:element name="ph" type="xsd:float"></xsd:element>
+
+            <xsd:element name="contenance">
+                <xsd:complexType>
+                    <xsd:simpleType>
+                        <xsd:attribute name="unit" type="quantite"/>
+                    </xsd:simpleType>
+                </xsd:complexType>
+            </xsd:element>
+
+
+        </xsd:sequence>
+        <xsd:attribute name="code_barre" type="code" use="required"/>
+
+    </xsd:complexType>
+</xsd:element>
+
+<!-- creazione del primo attributo ('code'): il codice a barre attributo di bottiglia -->
+<xsd:simpleType name="code">
+    <xsd:restriction base="xsd:positiveInteger"></xsd:restriction>
+</xsd:simpleType>
+
+<!-- creazione del secondo attributo ('unit'): la quantità in cl di 'contenance'-->
+<xsd:simpleType name="quantite">
+    <xsd:restriction base="xsd:positiveInteger">
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:element name="source">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="ville" type="xsd:string"></xsd:element>
+            <xsd:element name="departement" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+<!-- composition-->
+<xsd:element name="composition">
+    <xsd:complexType>
+        <xsd:sequence>
+
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+</xsd:schema>

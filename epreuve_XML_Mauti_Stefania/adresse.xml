@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<adresse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./adresse.xsd">
+    <rue>blabla</rue>
+    <numero>4</numero>
+    <boite>5</boite>
+    <code_postal>1000</code_postal>
+    <ville>Bruxelles</ville>
+</adresse>

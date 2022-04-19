@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!-- tag 'dates' -->
+    <xsd:element name="dates">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="date" maxOccurs="unbounded"/>
+                <!-- con 'maxOccurs' dico che può avere da 0 a infiniti elementi 'date'-->
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- funzione type="giorno" -->
+    <xsd:element name="giorno">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:positiveInteger">
+                <xsd:maxInclusive value="31"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <!-- funzione type="mese" -->
+    <xsd:element name="mese">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:positiveInteger">
+                <xsd:maxInclusive value="12"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <!-- funzione type="anno" -->
+    <xsd:element name="anno">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:positiveInteger">
+                <xsd:minInclusive value="1900"/>
+                <xsd:maxInclusive value="2130"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <!-- tag 'date' -->
+    <xsd:element name="date">
+        <xsd:complexType>
+            <xsd:sequence>
+                    <!-- sequenza di 4 tags: -->
+                <xsd:element ref="time"/>
+                    <!-- element := tag in .xml -->
+                <xsd:element name="day" type="giorno"/>
+                <xsd:element name="month" type="mese"/>
+                <xsd:element name="year" type="anno"/>
+                <
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="formatOra">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="12-hour"/>
+                <xsd:enumeration value="24-hour"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+
+    </xsd:element>
+    <!-- tag 'time' -->
+    <xsd:element name="time">
+        <xsd:complexType mixed="true">
+            <xsd:attribute name="format" type="formatOra" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+</xsd:schema>

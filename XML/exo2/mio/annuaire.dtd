@@ -1,0 +1,24 @@
+<!ELEMENT annuaire (personne+)>
+<!ELEMENT personne (name,firstname,adress,telephone,conctacts)>
+<!ATTLIST personne sex (homme|femme) #IMPLIED>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT firstname (#PCDATA)>
+
+<!ELEMENT adress (street, nb, zip, city, state, country)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT nb (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+
+<!ELEMENT telephone (number+)>
+<!-- NOTA BENE IL + DOPO NUMBER -->
+
+<!ELEMENT number (#PCDATA)>
+<!ATTLIST number type (home|work|other) #IMPLIED>
+
+<!ELEMENT conctacts (mail+)>
+<!ATTLIST mail type (Personelle|Professionelle|other) #IMPLIED>
+<!ELEMENT mail (#PCDATA)>

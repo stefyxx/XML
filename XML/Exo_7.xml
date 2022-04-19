@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<composition>
+    <auteur>Floristore</auteur>
+    <date_de_creation>29/02/2001</date_de_creation>
+    <fleuriste> <!-- OPTIONEL contient soit une ville soit un lieu -->
+        <ville>Paris</ville>
+    </fleuriste>
+    <composants>
+        <vase>
+            <matiere>Porcelaine</matiere>
+            <taille>50x70 cm</taille>
+        </vase>
+        <fleurs>
+            <nature>Europeenne</nature>
+            <item>Tulipe</item>
+            <item>glaieul</item>
+            <item>Marguerite</item>
+        </fleurs>
+    </composants>
+</composition>

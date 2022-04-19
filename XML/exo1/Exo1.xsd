@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="books">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="book" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="author">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="name" type="xsd:string"/>
+                <xsd:element name="firstname" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:simpleType name="Gender">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Fantasy"/>
+            <xsd:enumeration value="sci-fi"/>
+            <xsd:enumeration value="thriller"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="book">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="title" type="xsd:string"/>
+                <xsd:element ref="author"/>
+                <xsd:element name="gender" type="Gender"/>
+                <xsd:element ref="pubDate"/>
+            </xsd:sequence>
+            <xsd:attribute name="key" type="xsd:ID" use="required"/>
+            <xsd:attribute name="prev" type="xsd:IDREF"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Day -->
+    <xsd:simpleType name="Day">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:maxInclusive value="31"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Month -->
+    <xsd:simpleType name="Month">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:maxInclusive value="12"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Year">
+        <xsd:restriction base="xsd:int">
+            <xsd:maxInclusive value="2130"/>
+            <xsd:minInclusive value="-1000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="pubDate">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Day" type="Day"/>
+                <xsd:element name="Month" type="Month"/>
+                <xsd:element name="Year" type="Year"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

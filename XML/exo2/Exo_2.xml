@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- <!DOCTYPE phonebook SYSTEM "Exo2.dtd"> -->
+<phonebook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="./annuaire.xsd">
+    <person sex="H">
+        <firstname>John</firstname>
+        <lastname>Smith</lastname>
+        <address>
+            <number>5</number>
+            <street>Main street</street>
+            <zip>20800</zip>
+            <city>Washington</city>
+            <state>DC</state>
+            <country>USA</country>
+        </address>
+        <phones>
+            <phone type="home">123456789</phone>
+            <phone type="work">987654321</phone>
+        </phones>
+
+        <emails>
+            <email type="personal">test@test.com</email>
+            <email type="work">work@work.com</email>
+        </emails>
+    </person>
+    <person sex="F">
+        <firstname>Marie</firstname>
+        <lastname>Smith</lastname>
+        <address>
+            <number>5</number>
+            <street>Main street</street>
+            <zip>20800</zip>
+            <city>Washington</city>
+            <state>DC</state>
+            <country>USA</country>
+        </address>
+        <phones>
+            <phone type="home">123456789</phone>
+            <phone type="work">984654621</phone>
+        </phones>
+
+        <emails>
+            <email type="personal">marie@test.com</email>
+            <email type="work">work@work.com</email>
+        </emails>
+    </person>
+</phonebook>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="books">
+        <!-- scrivo 'books' perche poi posso scrivere 'book' e dire che ne posso avere più di 1 con maxOccurs -->
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="book" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+
+    </xsd:element>
+
+    <xsd:element name="book">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="title" type="xsd:string"/>
+                <xsd:element ref="author"/>
+                <xsd:element name="gender" type="xsd:string"></xsd:element>
+                <xsd:element ref="pubDate"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="author">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="name" type="xsd:string"/>
+                <xsd:element name="firstname" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:simpleType name="Day">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="31"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Month">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:maxInclusive value="12"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="pubDate">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Day" type="Day"></xsd:element>
+                <xsd:element name="Month" type="Month"></xsd:element>
+
+                <xsd:element name="Year" type="xsd:string"/>
+
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

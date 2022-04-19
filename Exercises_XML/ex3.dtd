@@ -1,0 +1,24 @@
+<!ELEMENT bibliographie (#PCDATA)>
+<!ELEMENT books (book)+>
+<!ATTLIST book id ID #REQUIRED>
+<!ELEMENT book (title,authores,tommes,info)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT authores (author)+>
+<!ELEMENT author (#PCDATA)>
+
+<!ELEMENT tomes (tome)+>
+<!ATTLIST tomes n_tomes NMTOKEN #IMPLIED>
+<!ELEMENT n_tomes (#PCDATA)>
+<!ELEMENT tome (nr_page)>
+
+<!ATTLIST tome id ID #REQUIRED>
+<!ATTLIST tome nISBN IDREF #REQUIRED>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT nISBN (#PCDATA)>
+
+<!ELEMENT nr_page (#PCDATA)>
+
+
+
+
+<!ELEMENT tome (#PCDATA)>

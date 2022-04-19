@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE annuaire SYSTEM "./annuaire.dtd">
+
+<annuaire>
+    <personne sex="homme">
+        <name>c</name>
+        <firstname>v</firstname>
+        <adress>
+            <street>v</street>
+            <nb>v</nb>
+            <zip>v</zip>
+            <city>v</city>
+            <state>v</state>
+            <country>v</country>
+        </adress>
+        <telephone>
+            <number type="home">v</number>
+            <number type="work">v</number>
+            <number type="other">v</number>
+        </telephone>
+        <conctacts>
+            <mail type="Personelle">v</mail>
+            <mail type="Professionelle">v</mail>
+            <mail type="other">v</mail>
+        </conctacts>
+    </personne>
+
+    <personne sex="femme">
+        <name>d</name>
+        <firstname>d</firstname>
+        <adress>
+            <street>d</street>
+            <nb>d</nb>
+            <zip>d</zip>
+            <city>d</city>
+            <state>d</state>
+            <country>d</country>
+        </adress>
+        <telephone><!-- meglio tipo-->
+            <number type="home">d</number>
+            <number type="work">d</number>
+            <number type="other">d</number>
+        </telephone>
+        <conctacts>
+            <mail type="Personelle">d</mail>
+            <mail type="Professionelle">d</mail>
+            <mail type="other">d</mail>
+        </conctacts>
+    </personne>
+
+</annuaire>

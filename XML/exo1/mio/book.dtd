@@ -1,0 +1,18 @@
+<!ELEMENT books (book+)>
+<!ELEMENT book (title,auteur,genre,datePublication)>
+
+<!ATTLIST book previous ID #REQUIRED>
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT auteur (name,firstname)>
+<!ELEMENT genre (#PCDATA)>
+<!ATTLIST datePublication format (jj-mm-yy) #REQUIRED>
+
+
+
+
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT firstname (#PCDATA)>
+
+<!ELEMENT format (#PCDATA)>

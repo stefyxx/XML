@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+<xsd:element name="adresse" type="Adresse"/>
+
+<xsd:complexType name="Adresse">
+    <xsd:sequence>
+        <xsd:element name="rue" type="Rue"/>
+        <xsd:element name="numero" type="xsd:positiveInteger"/>
+        <xsd:element name="boite" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="code_postal">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="[0-9][0-9][0-9][0-9]"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="ville">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="255"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+    </xsd:sequence>
+</xsd:complexType>
+
+
+
+    <xsd:simpleType name="Rue">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="255"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>

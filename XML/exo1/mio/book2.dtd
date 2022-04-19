@@ -1,0 +1,10 @@
+<!ELEMENT books (book+)>
+<!ELEMENT book (title,auteur,genre,datePublication)>
+<!ATTLIST book previous NMTOKEN #IMPLIED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT auteur (name,firstName)>
+<!ELEMENT name EMPTY>
+<!ELEMENT firstName EMPTY>
+<!ELEMENT genre EMPTY>
+<!ELEMENT datePublication EMPTY>
+<!ATTLIST datePublication format CDATA #REQUIRED>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Forma700"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2018-04-13 12:33:22 "/>
+        <attribute name="created" value="Rm9ybWE3MDA7REVTS1RPUC1LUlE0RU1GOzIwMTgtMDQtMTM7IjEyOjI1OjE3ICI7MjkzMw=="/>
+        <attribute name="edited" value="Rm9ybWE3MDA7REVTS1RPUC1LUlE0RU1GOzIwMTgtMDQtMTM7IjEyOjMzOjIyICI7MTszMDM2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="chiffre, retour" type="Integer" array="False" size=""/>
+            <assign variable="chiffre" expression="2"/>
+            <assign variable="retour" expression="Carre(chiffre)"/>
+            <output expression="retour" newline="True"/>
+            <assign variable="retour" expression="Carre(8)"/>
+            <output expression="retour" newline="True"/>
+        </body>
+    </function>
+    <function name="Carre" type="Integer" variable="result">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Integer" array="False" size=""/>
+            <assign variable="result" expression="x *x"/>
+        </body>
+    </function>
+</flowgorithm>
